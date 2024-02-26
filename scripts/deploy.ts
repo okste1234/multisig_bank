@@ -8,10 +8,6 @@ const token = await ethers.deployContract("Token");
 
   console.log(`Token deployed to ${token.target}`);
 
-  const [add1, add2, add3, add4, add5] = await ethers.getSigners()
-
-  const addresses = [add1.address, add2.address, add3.address, add4.address, add5.address]
-
   const cooperateBankFactory = await ethers.deployContract("MultiSigFactory");
 
   await cooperateBankFactory.waitForDeployment();
@@ -26,3 +22,6 @@ main().catch((error) => {
   console.error(error);
   process.exitCode = 1;
 });
+
+// 0xE1d66BD37B345A7EFfF21dd2a71014Ae57477c88
+// 0x3e487c38D80Eb4Ef1eeA96a6A67e203F3754f835
